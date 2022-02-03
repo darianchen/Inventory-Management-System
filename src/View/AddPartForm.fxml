@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddPartFormController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="450.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label text="Add Part     ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="inhouseRBtn" mnemonicParsing="false" onAction="#changeLabel" selected="true" text="In-House">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggle" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="outsourcedRBtn" mnemonicParsing="false" onAction="#changeLabel" text="Outsourced" toggleGroup="$toggle" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <GridPane prefHeight="180.0" prefWidth="341.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="94.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="98.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="42.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="149.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" GridPane.rowIndex="1" />
+                  <Label text="Inv" GridPane.rowIndex="2" />
+                  <Label text="Price/Cost" GridPane.rowIndex="3" />
+                  <Label fx:id="label" prefHeight="17.0" prefWidth="92.0" text="Machine ID" GridPane.rowIndex="5" />
+                  <Label text="Max" GridPane.rowIndex="4" />
+                  <TextField fx:id="partIdTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: lightgray;" GridPane.columnIndex="1" />
+                  <TextField fx:id="partNameTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="partInvTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="partPriceTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="partMaxTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="partMachineIdTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="partMinTxt" maxWidth="-Infinity" minWidth="98.0" prefHeight="25.0" prefWidth="98.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <padding>
+                        <Insets left="10.5" />
+                     </padding>
+                  </Label>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="saveButton" minWidth="52.0" mnemonicParsing="false" onAction="#onActionSavePart" text="Save" />
+                  <Button mnemonicParsing="false" onAction="#onActionCancel" text="Cancel" />
+               </children>
+               <padding>
+                  <Insets right="70.0" />
+               </padding>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="40.0" right="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
